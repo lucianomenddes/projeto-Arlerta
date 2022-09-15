@@ -1,4 +1,4 @@
-import {React, useEffect, useState} from 'react';
+import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Typography from '@mui/material/Typography';
 import Toolbar from '@mui/material/Toolbar';
@@ -41,10 +41,11 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   }));
   
 
-const NavBar = () =>{
+const Navbar = () =>{
    
     const navigate = useNavigate();
     return(
+      <>
         <Box sx={{ flexGrow: 1 }}>  
          <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
             <Toolbar>
@@ -72,6 +73,7 @@ const NavBar = () =>{
             </Toolbar>
         </AppBar>
      </Box> 
+     </>
     );
 }
-export default NavBar
+export default Navbar

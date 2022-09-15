@@ -14,29 +14,32 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import DisplaySettingsOutlinedIcon from '@mui/icons-material/DisplaySettingsOutlined';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import { useNavigate } from 'react-router-dom';
-
-
+import { v4 as uuidv4 } from 'uuid';
 const drawerWidth = 240;
-const menuItem = [
+
+const Layout = ()=> {
+  const navigate = useNavigate();
+  const id = uuidv4();
+  const menuItem = [
     {
         text: 'Ambientes',
         icon: <MonitorHeartOutlinedIcon/>,
-        path:  '/profile'
+        path:  '/ambientes'
     },
 
     {
-      text: 'Criar Ambientes',
-      icon: <AddCircleOutlineIcon/>,
-      path:  "/CreateEnvironment"
+      text: 'Definir Parâmetros',
+      icon: <DisplaySettingsOutlinedIcon/>,
+      path:  "/parametros-form/"+id
     },
 
     {
         text: 'Relatório',
         icon:  <BarChartIcon />,
-        path:  '/profile'
+        path:  '/report'
     },
     
   ]
@@ -45,7 +48,7 @@ const menuItem = [
     {
         text: 'Configurações',
         icon: <SettingsOutlinedIcon/>,
-        path:  '/profile'
+        path:  '/setting'
     },
 
     {
@@ -63,11 +66,6 @@ const menuItem = [
   ]
 
 
-const Layout = ()=> {
-  const navigate = useNavigate();
- 
-  
-  
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />

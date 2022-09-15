@@ -45,43 +45,30 @@ const SignInSide = () => {
       <Grid container component="main" sx={{ height: '100vh' }}>
         <CssBaseline />
         
-        <Grid
-          item
-          xs={false}
-          sm={4}
-          md={6}
-          sx={{
-            backgroundImage: `url(${ImgSignin})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundColor: (t) =>
-              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-            backgroundSize: 'auto',
-            backgroundPosition: 'center',
-            marginBottom:10
-          }}
-          
-        >
-
+        <Grid item xs={12} sm={8} md={6} >
         <Box
           sx={{
-            my: 12,
+             mt:15,
             textAlign: 'center',
             marginRight: 10,
-            marginLeft: 10
+            marginLeft: 10,
+            color:'#143053'
           }}
         >
-          <Typography variant="h3" component="div" gutterBottom>
+          <Typography variant="h3" component="div">
              Sistema Arlerta
           </Typography>
           <Typography variant="body1" gutterBottom sx={{textAlign: 'justify'}}>
-             O software tem como objetivo fazer o monitoramento e 
-             análise da qualidade do ar em ambientes hospitalares permitindo 
-             configurar os parâmetros de análise para cada ambiente individualmente 
-             de acordo com sua necessidade, em caso de não conformidades com os parâmetros 
+             Nosso objetivo é fazer o monitoramento e análise da qualidade do ar 
+             em ambientes hospitalares permitindo configurar os parâmetros de análise 
+             para cada ambiente individualmente de acordo com sua necessidade,
+             em caso de não conformidades com os parâmetros 
              o sistema emitirá alertas.
           </Typography>
-        </Box>
-
+            <Box>
+              <img src={ImgSignin} alt=""/>
+            </Box>
+        </Box>   
         </Grid>
         
         <Grid item xs={12} sm={8} md={6} component={Paper} elevation={6} square>
@@ -110,7 +97,6 @@ const SignInSide = () => {
                 id="username"
                 label="Username"
                 name="email"
-                autoFocus
               />
               <TextField
                variant="standard" 
